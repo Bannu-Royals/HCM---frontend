@@ -5,7 +5,7 @@ import api from '../../utils/axios';
 import toast from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import jsPDF from 'jspdf';
+import {jsPDF} from 'jspdf';
 import { UserIcon, CheckCircleIcon, ClockIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 
 const TimelineItem = ({ status, timestamp, note, assignedTo, isLast }) => (
