@@ -8,10 +8,15 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'https://hcm-backend-uihn.onrender.com',
+        target: process.env.VITE_API_URL || 'https://hcm-backend-uihn.onrender.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },
-}); 
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
+});
